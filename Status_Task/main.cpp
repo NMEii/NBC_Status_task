@@ -27,15 +27,16 @@ bool isNum(string str)
 	bool bNum = false;
 	int i = 0;
 
-	if (str[0] == 45) // ASCII 코드 '-' 값 확인
+	if (str[0] == 45)	// ASCII 코드 '-' 값 확인
 	{
-		i += 1;
-	}
+		i += 1;			// 음수의 경우 처음으로 -의 기호가 붙기 때문에 확인하고
+	}					// 문자열의 첫자리가 -라면 다음 문자열을 읽도록 for문에 
+						// 들어갈 i의 값을 +1 해준다.
 
-	for (i; i < str.length(); i++)
+	for (i; i < str.length(); i++)	
 	{
 		
-		if (str[i] >= 48 && str[i] <= 57) // ASCII 코드 0~9 확인
+		if (str[i] >= 48 && str[i] <= 57) // ASCII 코드 0~9 여부 확인
 		{
 			bNum = true;
 		}
@@ -45,7 +46,7 @@ bool isNum(string str)
 			return bNum;
 		}
 	}
-	return bNum;
+	return bNum;		// 숫자면 True / 숫자가 아니라면 Fasle
 }
 
 int inputException(string catrgory, int excep)
